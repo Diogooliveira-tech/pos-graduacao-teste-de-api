@@ -1,0 +1,33 @@
+- ao iniciar o projeto dar um git pull
+- para instalar as dependencia, na pasta  D:\Projeto\pos-graduacao-disciplina-teste-de-api\aulas1\crud_clientes_node> 
+  Rodar o comando: npm i
+- para instalar as dependencia de backend, na pasta D:\Projeto\pos-graduacao-disciplina-teste-de-api\aulas1\crud_clientes_node\backend> 
+  Rodar o comando: npm i
+- backend, na pasta D:\Projeto\pos-graduacao-disciplina-teste-de-api\aulas1\crud_clientes_node\backend> 
+  Rodar o comando: node app.js
+  deve apresentar a mensagem "Servidor rodando em http://localhost:3000"
+- Doc swegger OFICIAL PROJETO: http://localhost:3000/api-docs/
+- Doc para consulta de status de API: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Status#respostas_bem-sucedidas
+- repositório backend: https://github.com/taynaraluanacaetano/crud_clientes_node
+- aplicaçãp web: https://crud-clientes-node.vercel.app/
+- user: admin, senha: admin
+- site para gerar massa de dados para teste: https://fordevs.com.br/
+- trello professora: https://trello.com/b/w3i3K9Kw/aplicativo-cadastro-conteudos
+- 
+
+- Dependencia do projeto: 
+  -> https://jestjs.io/docs/getting-started
+  -> https://www.npmjs.com/package/supertest
+
+- Conteudos para leitura:
+  -> https://maximilianoalves.medium.com/vader-heuristica-para-teste-de-api-na-pratica-fcf78c6acec
+  -> https://marioalvial.medium.com/blindando-sua-api-spring-boot-com-o-padr%C3%A3o-dto-44f97020d1a0
+
+ - Minhas anotaçoes
+   -> https://docs.google.com/document/d/1WlYzon5g3sGmZ3G1dI7A9ou5148-tuetgxlr2OrZBCI/edit?pli=1
+   -> https://docs.google.com/document/d/1nNXaop_yJw10uFJlgx0VZmUd80SufM3yHmLFgOs7kPc/edit
+
+DIRETÓRIO DOS PROJETOS
+LOCAL:  D:\Projeto\pos-graduacao-disciplina-teste-de-api\PRIMEIRO-TEST> 
+BACKEND 1:  D:\Projeto\pos-graduacao-disciplina-teste-de-api\aulas1\crud_clientes_node
+BACKEND 2:  D:\Projeto\pos-graduacao-disciplina-teste-de-api\aulas1\crud_clientes_node\backend> 
