@@ -31,3 +31,6 @@ DIRETÓRIO DOS PROJETOS
 LOCAL:  D:\Projeto\pos-graduacao-disciplina-teste-de-api\PRIMEIRO-TEST> 
 BACKEND 1:  D:\Projeto\pos-graduacao-disciplina-teste-de-api\aulas1\crud_clientes_node
 BACKEND 2:  D:\Projeto\pos-graduacao-disciplina-teste-de-api\aulas1\crud_clientes_node\backend> 
+
+// valida o que eu enviei é o que eu esperava e receber de volta
+    -> //expect(response.body).toEqual(json_arquivo_cadastro_usuario);
