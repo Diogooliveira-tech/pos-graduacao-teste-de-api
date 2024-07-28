@@ -24,6 +24,10 @@ describe('Suite de teste da api users...', () => {
         senha: ""
     }
 
+    const json_teste_sem_conteudo = {
+        
+    }
+
     let idUsuario;
 
     it('CT001 - Deve cadastrar um novo usuario, e retornar 201.', async () => {
@@ -69,7 +73,7 @@ describe('Suite de teste da api users...', () => {
         console.log('Usuário retornado: ', response.body);
     });
 
-    it.only('Alterando o registro cadastrado anteriormente. Método PUT', async () => {
+    it.only('CT004 - Alterando o registro cadastrado anteriormente. Método PUT', async () => {
        // Atividade C, depende do A
        
        const novoPayload ={
@@ -93,7 +97,7 @@ describe('Suite de teste da api users...', () => {
         */
     })
 
-    it('CT004 - Criação de usuário com dados válidos, deve retornar o "Corpo do Objeto do usuário" criado e um status 201.', async () => {
+    it('CT005 - Criação de usuário com dados válidos, deve retornar o "Corpo do Objeto do usuário" criado e um status 201.', async () => {
         // Atividade 2
         const response = await request(rota)
             .post('/users')
@@ -103,7 +107,7 @@ describe('Suite de teste da api users...', () => {
         console.log(response.body);
     });
 
-    it('CT005 - Deve Cadastrar usuário com Dados Ausentes, e lançar um Erro e retornar um status 422 apresentando uma mensagem descritiva e detalhada do erro', async () => {
+    it('CT006 - Deve Cadastrar usuário com Dados Ausentes, e lançar um Erro e retornar um status 422 apresentando uma mensagem descritiva e detalhada do erro', async () => {
         // Atividade 3
         const response = await request(rota)
             .post('/users')
@@ -113,7 +117,7 @@ describe('Suite de teste da api users...', () => {
         console.log(response.body);
     });
 
-    it('CT006 - Criação de usuário com dados inválidos, deve retornar 422 e a mensagem de erro como resposta.', async () => {
+    it('CT007 - Criação de usuário com dados inválidos, deve retornar 422 e a mensagem de erro como resposta.', async () => {
         const response = await request(rota)
             .post('/users')
             .send(json_arquivo_cadastro_usuario)
@@ -122,7 +126,7 @@ describe('Suite de teste da api users...', () => {
         console.log(response.body)
     })
 
-    it('CT007 - Cadastro com conteúdo do Json VAZIO, deve retornar status 422 e apresentando uma mensagem descritiva e detalhada com o erro "Os seguintes campos são obrigatórios: nome, telefone, email, senha".', async () => {
+    it('CT008 - Cadastro com conteúdo do Json VAZIO, deve retornar status 422 e apresentando uma mensagem descritiva e detalhada com o erro "Os seguintes campos são obrigatórios: nome, telefone, email, senha".', async () => {
         const response = await request(rota)
             .post('/users')
             .send(json_teste_conteudo_vazio)

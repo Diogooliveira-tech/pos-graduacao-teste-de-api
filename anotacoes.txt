@@ -34,3 +34,6 @@ BACKEND 2:  D:\Projeto\pos-graduacao-disciplina-teste-de-api\aulas1\crud_cliente
 
 // valida o que eu enviei é o que eu esperava e receber de volta
     -> //expect(response.body).toEqual(json_arquivo_cadastro_usuario);
+
+// comando para instalar a biblioteca faker: npm install @faker-js/faker --save-dev    
+// -> link documentação: https://fakerjs.dev/   
