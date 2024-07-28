@@ -6,7 +6,7 @@ describe('Suite de teste da api users...', () => {
     const json_arquivo_cadastro_usuario = {
         nome: "Diogo do Teste",
         telefone: "(11) 12345-6789",
-        email: "souDeQAa@3@usuario3.com", // nossa chave unica
+        email: "souDeQAa@3@usuario4.com", // nossa chave unica
         senha: "1232"
     }
 
@@ -69,6 +69,29 @@ describe('Suite de teste da api users...', () => {
         console.log('Usuário retornado: ', response.body);
     });
 
+    it.only('Alterando o registro cadastrado anteriormente. Método PUT', async () => {
+       // Atividade C, depende do A
+       
+       const novoPayload ={
+            nome: "Batatão do Teste",
+            telefone: "(31) 91234-5678",
+            email: "garrafa@teste.com", //nossa chave unica
+            senha: "54321"
+       }
+       
+       const responseUpdate = await request(rota)
+            .put(`/users/${idUsuario}`)
+            .send(novoPayload)
+
+        expect(responseUpdate.status).toBe(201);
+        expect(responseUpdate.body.nome).toBe(novoPayload.nome); //valida se o nome que estou enviando é de fato o que deve ser alterado
+       console.log(responseUpdate.body)
+
+        /*dicas: 
+         - com a variável armazenada, chame o método put, passando payload com a alteração do nome do usuário,
+         - não esqueça de passar todos os campos que sejam obrigatórios
+        */
+    })
 
     it('CT004 - Criação de usuário com dados válidos, deve retornar o "Corpo do Objeto do usuário" criado e um status 201.', async () => {
         // Atividade 2
