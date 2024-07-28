@@ -1,6 +1,4 @@
 const request = require('supertest');
-const funcoesGenericas = require('../suporte/funcoes_genericas')
-
 const rota = "http://localhost:3000";
 
 describe('Suite de teste da api users...', () => {
@@ -8,7 +6,7 @@ describe('Suite de teste da api users...', () => {
     const json_arquivo_cadastro_usuario = {
         nome: "Diogo do Teste",
         telefone: "(11) 12345-6789",
-        email: "souDeQa@3@usuario1.com", // nossa chave unica
+        email: "souDeQAa@3@usuario3.com", // nossa chave unica
         senha: "1232"
     }
 
@@ -19,14 +17,16 @@ describe('Suite de teste da api users...', () => {
         senha: ""
     }
 
-    const json_teste_sem_conteudo = {
-        "nome": "",
-        "telefone": "",
-        "email": "",
-        "senha": ""
+    const json_teste_conteudo_vazio = {
+        nome: "",
+        telefone: "",
+        email: "",
+        senha: ""
     }
 
-    it('Deve cadastrar um novo usuario, e retornar 201.', async () => {
+    let idUsuario;
+
+    it('CT001 - Deve cadastrar um novo usuario, e retornar 201.', async () => {
         // construindo a requisição, e passando a rota completa
         const response = await request(rota)
             .post('/users')
@@ -38,33 +38,76 @@ describe('Suite de teste da api users...', () => {
         console.log(response.body);
     });
 
-    it('Deve cadastrar um usuário com dados válidos, e retornar um objeto do usuário criado e um status 201.', async () => {
+    it.only('CT002 - Criação de usuário com dados válidos, deve retornar a resposta', async () => {
+        // Atividade A, serve para o B
         const response = await request(rota)
             .post('/users')
-            // no primeiro momento, não estamos usando uma biblioteca para gerar massa de teste. Por isso, o (json_arquivo_cadastro_usuario) pode exibir erro.
-            .send(json_arquivo_cadastro_usuario)
+            .send(json_arquivo_cadastro_usuario) // no primeiro momento, não estamos usando uma biblioteca para gerar massa de teste. Por isso, o (json_arquivo_cadastro_usuario) pode exibir erro.
+        expect(response.body).toBeDefined(); // vai retornar o Corpo do conteudo do body e ainda fala que a resposta do body tem um corpo e tem um registro e não está nulla ou vazia.
+        expect(response.body).toHaveProperty('id'); // asserção p/ verificar se na response.body existe a propiedade, ai devo informar a propriedade que eu quero.
+        expect(response.status).toBe(201);
+
+        idUsuario = response.body.id
+        console.log('Usuário cadastrado:', idUsuario);
+
+        /*dicas: 
+         - Após o cadastro "POST", armazene o resultado em uma variável.
+         - Essa variavel já deverá estar definida...
+         - Lembre-se que para você acessar o objeto de um playload você pode usar response.body.objetoDesejado.
+        */
+
+    });
+
+    it.only('CT003 - Deve consultar o usuário cadastrado anteriormente, e logar o registro do usuário cadastrado como retornado', async () => {
+        // Atividade B, depende do A        
+        const response = await request(rota)
+            .get(`/users/${idUsuario}`);
+
+        expect(response.status).toBe(200); //valida o status
+        expect(response.body).toBeDefined(); // vai retornar o Corpo do conteudo do body e ainda fala que a resposta do body tem um corpo e tem um registro e não está nulla ou vazia.
+        expect(response.body).toHaveProperty('id', idUsuario); // asserção p/ verificar se na response.body existe a propiedade, ai devo informar a propriedade que eu quero.     
+        console.log('Usuário retornado: ', response.body);
+    });
+
+
+    it('CT004 - Criação de usuário com dados válidos, deve retornar o "Corpo do Objeto do usuário" criado e um status 201.', async () => {
+        // Atividade 2
+        const response = await request(rota)
+            .post('/users')
+            .send(json_arquivo_cadastro_usuario) // no primeiro momento, não estamos usando uma biblioteca para gerar massa de teste. Por isso, o (json_arquivo_cadastro_usuario) pode exibir erro.
+        expect(response.body).toBeDefined(); // vai retornar o Corpo do conteudo do body e ainda fala que a resposta do body tem um corpo e tem um registro e não está nulla ou vazia.
         expect(response.status).toBe(201);
         console.log(response.body);
     });
 
-    it('Deve Cadastrar usuário com Dados Ausentes, e lançar um Erro e retornar um status 422 apresentando uma mensagem descritiva e detalhada do erro', async () => {
+    it('CT005 - Deve Cadastrar usuário com Dados Ausentes, e lançar um Erro e retornar um status 422 apresentando uma mensagem descritiva e detalhada do erro', async () => {
+        // Atividade 3
         const response = await request(rota)
             .post('/users')
             .send(json_arquivo_cadastro_usuario_dados_ausentes)
+        expect(response.body).toBeDefined();
         expect(response.status).toBe(422)
         console.log(response.body);
     });
 
-    it('Tentativa de Cadastro sem conteúdo, deve retornar status 422 e apresentando uma mensagem descritiva e detalhada com o erro "Os seguintes campos são obrigatórios: nome, telefone, email, senha".', async () => {
+    it('CT006 - Criação de usuário com dados inválidos, deve retornar 422 e a mensagem de erro como resposta.', async () => {
         const response = await request(rota)
             .post('/users')
-            .send(json_teste_sem_conteudo)
+            .send(json_arquivo_cadastro_usuario)
+        expect(response.body).toBeDefined();
+        expect(response.status).toBe(422);
+        console.log(response.body)
+    })
+
+    it('CT007 - Cadastro com conteúdo do Json VAZIO, deve retornar status 422 e apresentando uma mensagem descritiva e detalhada com o erro "Os seguintes campos são obrigatórios: nome, telefone, email, senha".', async () => {
+        const response = await request(rota)
+            .post('/users')
+            .send(json_teste_conteudo_vazio)
         expect(response.status).toBe(422);
         console.log(response.body);
     });
 
 });
-
 
 /*
     const json_teste_POSTusersComOcampoEmailComoBooleano = {
@@ -148,4 +191,3 @@ describe('Suite de teste da api users...', () => {
         console.log(response.body);
     });
 */
-
