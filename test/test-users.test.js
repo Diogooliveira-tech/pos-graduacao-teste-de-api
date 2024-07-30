@@ -52,12 +52,45 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
     })
 
     it('CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.', async () => {
-        //armazenar a variavel
+
+        const novoUsuario = {
+            nome: faker.name.fullName(),
+            telefone: faker.phone.number('+55 (##) ####-####'),
+            email: faker.internet.email(),
+            senha: faker.internet.password()
+        }
+
+        //armazenar a variavel = linha 21.
         // receber a variavel no parametro da url do put
-        // laterar todos os registros do payload
-        //validar status code
-        //validar alteração
-        //logar resposta
+        //passamos o usuário como parâmetro no id da rota
+        const responsePut = await request(rotaUsers)
+            .put(`/users/${recebeId}`)
+            // alterar todos os registros do payload
+            //obs.: o comando ".send()", faz o envio das coisas 
+            .send(novoUsuario)
+
+        //validação do statusCode
+        expect(responsePut.status).toBe(201);
+
+        //validação da alteração dos campos: nome, telefone, senha
+        expect(responsePut.body.nome).toBe(novoUsuario.nome);
+        expect(responsePut.body.telefone).toBe(novoUsuario.telefone);
+        //expect(responsePut.body.email).toBe(payloadUsuario.email);
+
+        //logar resposta do PUT
+        console.log('Usuário alterado: ', responsePut.body);
+
+        //validar um GET/, se a consulta dos dados se estão retornando os dados que foram alterados.
+        const responseGet = await request(rotaUsers)
+            .get(`/users/${recebeId}`)
+
+        expect(responseGet.status).toBe(200);
+        expect(responseGet.body.id).toBe(recebeId);
+        expect(responseGet.body.nome).toBe(novoUsuario.nome);
+        expect(responseGet.body.telefone).toBe(novoUsuario.telefone);
+
+        //logar resposta da consulta
+        console.log('Usuário alterado resultado da consulta: ', responseGet.body);
     })
 
     it('CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204.', async () => {
@@ -78,50 +111,50 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
         expect(responseGet.body).toEqual({ error: 'Usuário não encontrado' });
         console.log(responseGet.body);
     })
-    
+
 });
-
-
-/*
-it('Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.', async () => {
-    const response = await request(rotaUsers)
-        .post('/users')
-        .send(payloadUsuario);
-
-    //validação do status code
-    expect(response.status).toBe(201);
-
-    //validar dados retornados
-    const {id, nome, telefone, email} = response.body
-
-    //verifica presença do ID
-    expect(id).toBeDefined();
-
-    //verifica valor enviado x persistido (recebido)
-    expect(nome).toBe(payloadUsuario.nome)
-    expect(telefone).toBe(payloadUsuario.telefone)
-    expect(email).toBe(payloadUsuario.email)
-
-    //verificar que a senha não está presente no retorno
-    expect(response.body.senha).toBeUndefined();
-
-    console.log('Cadastro do usuário randomico: ', response.body);
-
-})
-
-*/
-
-
-
-
 
 // Como começar o meu teste, o modelo de escrita sempre é o describe, logo é dessa forma que ele é feito:
 /*
-describe('Descrição da minha suite de teste', () =>{
-    it('Descição do meu Teste. Posso ter um it ou N its na minha suite de testes', async() =>{
+    describe('Descrição da minha suite de teste', () =>{
+        it('Descição do meu Teste. Posso ter um it ou N its na minha suite de testes', async() =>{
 
-    })
-});
+        })
+    });
 */
 
 // no Vs code tem extenções para criar os meus describe e its
+
+
+/* //Obs.:
+        -> Valida explicitamente os campos id, nome, telefone e email, além de verificar que a senha não está presente no retorno.
+        -> Não armazena o id em uma variável externa
+        -> Verifica explicitamente que a senha não está presente na resposta.
+
+    it('CT002-V1 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.', async () => {
+        const response = await request(rotaUsers)
+            .post('/users')
+            .send(payloadUsuario);
+
+        //validação do status code
+        expect(response.status).toBe(201);
+
+        //validar dados retornados
+        const {id, nome, telefone, email} = response.body
+
+        //verifica presença do ID
+        expect(id).toBeDefined();
+
+        //verifica valor enviado x persistido (recebido)
+        expect(nome).toBe(payloadUsuario.nome)
+        expect(telefone).toBe(payloadUsuario.telefone)
+        expect(email).toBe(payloadUsuario.email)
+
+        //verificar que a senha não está presente no retorno
+        expect(response.body.senha).toBeUndefined();
+
+        console.log('Cadastro do usuário randomico: ', response.body);
+
+    })
+
+*/

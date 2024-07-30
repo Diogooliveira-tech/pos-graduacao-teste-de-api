@@ -37,3 +37,7 @@ BACKEND 2:  D:\Projeto\pos-graduacao-disciplina-teste-de-api\aulas1\crud_cliente
 
 // comando para instalar a biblioteca faker: npm install @faker-js/faker --save-dev    
 // -> link documentação: https://fakerjs.dev/   
+
+// Relatório de teste de API
+// -> link: https://www.npmjs.com/package/jest-stare
+// -> comando para instalar na raiz do projeto: npm install jest-stare --save-dev
