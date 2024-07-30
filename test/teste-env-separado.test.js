@@ -1,9 +1,15 @@
 const request = require('supertest'); //fazendo um require do superte
 //const rotaUsers = 'http://localhost:3000'; //passando minha rota, ela pode e deve estar em outro lugar isolada
 
-require('dotenv').config(); //importando minha rota
+//require('dotenv').config(); //importando minha rota
 const { faker } = require('@faker-js/faker'); //importando a biblioteca do faker
-const rotaUsers = process.env.URL_USERS;
+//const rotaUsers = process.env.URL_USERS;
+
+const {
+    URLS,
+    HEADERS
+} = require('../suporte/configEnv')
+
 
 describe('Suite de testes crud (post, get, put, delete)', () => {
 
@@ -24,7 +30,7 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
     let recebeId;
 
     it('CT001 - Ausencia de campo email, deverá gerar o status code 422 e emitir uma mensagem de erro validando a mesma', async () => {
-        const response = await request(rotaUsers)
+        const response = await request(URLS.ENDPOINT_USERS)
             .post('/users')
             .send(payloadUsuarioEmailFieldNull);
 
@@ -38,8 +44,9 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
     })
 
     it('CT002 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.', async () => {
-        const response = await request(rotaUsers)
+        const response = await request(URLS.ENDPOINT_USERS)
             .post('/users')
+            .set(HEADERS.CONTENT_TYPE)
             .send(payloadUsuario);
 
         //armazenar o retorno do ID, na variável
@@ -66,7 +73,7 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
         //armazenar a variavel = linha 21.
         // receber a variavel no parametro da url do put
         //passamos o usuário como parâmetro no id da rota
-        const responsePut = await request(rotaUsers)
+        const responsePut = await request(URLS.ENDPOINT_USERS)
             .put(`/users/${recebeId}`)
             // alterar todos os registros do payload
             //obs.: o comando ".send()", faz o envio das coisas 
@@ -84,7 +91,7 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
         console.log('Usuário alterado: ', responsePut.body);
 
         //validar um GET/, se a consulta dos dados se estão retornando os dados que foram alterados.
-        const responseGet = await request(rotaUsers)
+        const responseGet = await request(URLS.ENDPOINT_USERS)
             .get(`/users/${recebeId}`)
 
         expect(responseGet.status).toBe(200);
@@ -97,7 +104,7 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
     })
 
     it('CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204.', async () => {
-        const response = await request(rotaUsers)
+        const response = await request(URLS.ENDPOINT_USERS)
             .delete(`/users/${recebeId}`)
 
         //valida o statusCode    
@@ -105,7 +112,7 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
         console.log('Resposta do delete:', response.body)
 
         //validar se realmente foi removido o registro
-        const responseGet = await request(rotaUsers)
+        const responseGet = await request(URLS.ENDPOINT_USERS)
             .get(`/users/${recebeId}`)
 
         expect(responseGet.status).toBe(404); //valida o status

@@ -89,7 +89,7 @@
                 <canvas id="test-suites-canvas" width="100" height="100"></canvas>
                 <h2>Test Suites</h2>
                 <div class="list-group">
-                    <p id="test-suites-results" class="list-group-item list-group-item-action">1 passed, 1 total</p>
+                    <p id="test-suites-results" class="list-group-item list-group-item-action">2 passed, 2 total</p>
                 </div>
             </div>
             <!-- /.col-lg-4 -->
@@ -97,7 +97,7 @@
                 <canvas id="tests-canvas" width="100" height="100"></canvas>
                 <h2>Tests</h2>
                 <div class="list-group">
-                    <p id="tests-results" class="list-group-item list-group-item-action">4 passed, 4 total</p>
+                    <p id="tests-results" class="list-group-item list-group-item-action">8 passed, 8 total</p>
                 </div>
             </div>
             <!-- /.col-lg-4 -->
@@ -128,14 +128,14 @@
             <div class="d-none" id="test-results">{
   &quot;numFailedTestSuites&quot;: 0,
   &quot;numFailedTests&quot;: 0,
-  &quot;numPassedTestSuites&quot;: 1,
-  &quot;numPassedTests&quot;: 4,
+  &quot;numPassedTestSuites&quot;: 2,
+  &quot;numPassedTests&quot;: 8,
   &quot;numPendingTestSuites&quot;: 0,
   &quot;numPendingTests&quot;: 0,
   &quot;numRuntimeErrorTestSuites&quot;: 0,
   &quot;numTodoTests&quot;: 0,
-  &quot;numTotalTestSuites&quot;: 1,
-  &quot;numTotalTests&quot;: 4,
+  &quot;numTotalTestSuites&quot;: 2,
+  &quot;numTotalTests&quot;: 8,
   &quot;openHandles&quot;: [],
   &quot;snapshot&quot;: {
     &quot;added&quot;: 0,
@@ -153,7 +153,7 @@
     &quot;unmatched&quot;: 0,
     &quot;updated&quot;: 0
   },
-  &quot;startTime&quot;: 1722316072377,
+  &quot;startTime&quot;: 1722376770553,
   &quot;success&quot;: false,
   &quot;testResults&quot;: [
     {
@@ -164,10 +164,98 @@
       &quot;numTodoTests&quot;: 0,
       &quot;openHandles&quot;: [],
       &quot;perfStats&quot;: {
-        &quot;end&quot;: 1722316076481,
-        &quot;runtime&quot;: 4004,
+        &quot;end&quot;: 1722376775611,
+        &quot;runtime&quot;: 4525,
         &quot;slow&quot;: false,
-        &quot;start&quot;: 1722316072477
+        &quot;start&quot;: 1722376771086
+      },
+      &quot;skipped&quot;: false,
+      &quot;snapshot&quot;: {
+        &quot;added&quot;: 0,
+        &quot;fileDeleted&quot;: false,
+        &quot;matched&quot;: 0,
+        &quot;unchecked&quot;: 0,
+        &quot;uncheckedKeys&quot;: [],
+        &quot;unmatched&quot;: 0,
+        &quot;updated&quot;: 0
+      },
+      &quot;testFilePath&quot;: &quot;C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\teste-env-separado.test.js&quot;,
+      &quot;testResults&quot;: [
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Suite de testes crud (post, get, put, delete)&quot;
+          ],
+          &quot;duration&quot;: 47,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Suite de testes crud (post, get, put, delete) CT001 - Ausencia de campo email, deverá gerar o status code 422 e emitir uma mensagem de erro validando a mesma&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;CT001 - Ausencia de campo email, deverá gerar o status code 422 e emitir uma mensagem de erro validando a mesma&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Suite de testes crud (post, get, put, delete)&quot;
+          ],
+          &quot;duration&quot;: 12,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Suite de testes crud (post, get, put, delete) CT002 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;CT002 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Suite de testes crud (post, get, put, delete)&quot;
+          ],
+          &quot;duration&quot;: 15,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Suite de testes crud (post, get, put, delete) CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 7,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Suite de testes crud (post, get, put, delete)&quot;
+          ],
+          &quot;duration&quot;: 12,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Suite de testes crud (post, get, put, delete) CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204.&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 3,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204.&quot;
+        }
+      ],
+      &quot;failureMessage&quot;: null
+    },
+    {
+      &quot;leaks&quot;: false,
+      &quot;numFailingTests&quot;: 0,
+      &quot;numPassingTests&quot;: 4,
+      &quot;numPendingTests&quot;: 0,
+      &quot;numTodoTests&quot;: 0,
+      &quot;openHandles&quot;: [],
+      &quot;perfStats&quot;: {
+        &quot;end&quot;: 1722376775760,
+        &quot;runtime&quot;: 4669,
+        &quot;slow&quot;: false,
+        &quot;start&quot;: 1722376771091
       },
       &quot;skipped&quot;: false,
       &quot;snapshot&quot;: {
@@ -185,7 +273,7 @@
           &quot;ancestorTitles&quot;: [
             &quot;Suite de testes crud (post, get, put, delete)&quot;
           ],
-          &quot;duration&quot;: 73,
+          &quot;duration&quot;: 57,
           &quot;failureDetails&quot;: [],
           &quot;failureMessages&quot;: [],
           &quot;fullName&quot;: &quot;Suite de testes crud (post, get, put, delete) CT001 - Ausencia de campo email, deverá gerar o status code 422 e emitir uma mensagem de erro validando a mesma&quot;,
@@ -200,7 +288,7 @@
           &quot;ancestorTitles&quot;: [
             &quot;Suite de testes crud (post, get, put, delete)&quot;
           ],
-          &quot;duration&quot;: 17,
+          &quot;duration&quot;: 13,
           &quot;failureDetails&quot;: [],
           &quot;failureMessages&quot;: [],
           &quot;fullName&quot;: &quot;Suite de testes crud (post, get, put, delete) CT002 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.&quot;,
@@ -215,7 +303,7 @@
           &quot;ancestorTitles&quot;: [
             &quot;Suite de testes crud (post, get, put, delete)&quot;
           ],
-          &quot;duration&quot;: 70,
+          &quot;duration&quot;: 16,
           &quot;failureDetails&quot;: [],
           &quot;failureMessages&quot;: [],
           &quot;fullName&quot;: &quot;Suite de testes crud (post, get, put, delete) CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.&quot;,
@@ -230,7 +318,7 @@
           &quot;ancestorTitles&quot;: [
             &quot;Suite de testes crud (post, get, put, delete)&quot;
           ],
-          &quot;duration&quot;: 23,
+          &quot;duration&quot;: 13,
           &quot;failureDetails&quot;: [],
           &quot;failureMessages&quot;: [],
           &quot;fullName&quot;: &quot;Suite de testes crud (post, get, put, delete) CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204.&quot;,
@@ -301,7 +389,7 @@
   ],
   &quot;rootDir&quot;: &quot;C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api&quot;,
   &quot;runTestsByPath&quot;: false,
-  &quot;seed&quot;: -560668049,
+  &quot;seed&quot;: 1138458303,
   &quot;skipFilter&quot;: false,
   &quot;snapshotFormat&quot;: {
     &quot;escapeString&quot;: false,
@@ -312,7 +400,6 @@
   &quot;testSequencer&quot;: &quot;C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\@jest\\test-sequencer\\build\\index.js&quot;,
   &quot;updateSnapshot&quot;: &quot;new&quot;,
   &quot;useStderr&quot;: false,
-  &quot;verbose&quot;: true,
   &quot;watch&quot;: false,
   &quot;watchAll&quot;: false,
   &quot;watchman&quot;: true,

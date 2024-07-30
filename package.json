@@ -10,6 +10,7 @@
   "author": "Diogo Marques de Oliveira",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
   },
