@@ -1,220 +1,127 @@
-const request = require('supertest');
-const rota = "http://localhost:3000";
+const request = require('supertest'); //fazendo um require do superte
+const rotaUsers = 'http://localhost:3000'; //passando minha rota, ela pode e deve estar em outro lugar isolada
+const { faker } = require('@faker-js/faker'); //importando a biblioteca do faker
 
-describe('Suite de teste da api users...', () => {
+describe('Suite de testes crud (post, get, put, delete)', () => {
 
-    const json_arquivo_cadastro_usuario = {
-        nome: "Diogo do Teste",
-        telefone: "(11) 12345-6789",
-        email: "souDeQAa@3@usuario4.com", // nossa chave unica
-        senha: "1232"
+    const payloadUsuario = {
+        nome: faker.name.fullName(),
+        telefone: faker.phone.number('+55 (##) ####-####'),
+        email: faker.internet.email(),
+        senha: faker.internet.password()
     }
 
-    const json_arquivo_cadastro_usuario_dados_ausentes = {
-        nome: "",
-        telefone: "",
-        email: "heloisa@vaitester422.com.br",
-        senha: ""
+    const payloadUsuarioEmailFieldNull = {
+        nome: faker.name.fullName(),
+        telefone: faker.phone.number('+55 (##) ####-####'),
+        email: null,
+        senha: faker.internet.password()
     }
 
-    const json_teste_conteudo_vazio = {
-        nome: "",
-        telefone: "",
-        email: "",
-        senha: ""
-    }
+    let recebeId;
 
-    const json_teste_sem_conteudo = {
-        
-    }
-
-    let idUsuario;
-
-    it('CT001 - Deve cadastrar um novo usuario, e retornar 201.', async () => {
-        // construindo a requisição, e passando a rota completa
-        const response = await request(rota)
+    it('CT001 - Ausencia de campo email, deverá gerar o status code 422 e emitir uma mensagem de erro validando a mesma', async () => {
+        const response = await request(rotaUsers)
             .post('/users')
-            // precisamos informar os dados que serão enviados no body.
-            // no primeiro momento, não estamos usando uma biblioteca para gerar massa de teste. Por isso, o (json_arquivo_cadastro_usuario) pode exibir erro.
-            .send(json_arquivo_cadastro_usuario)
-        // teste do retorno de status 201
-        expect(response.status).toBe(201);
+            .send(payloadUsuarioEmailFieldNull);
+
+        //validação do status code
+        expect(response.status).toBe(422);
+
+        //validar a mensagem: "Os seguintes campos são obrigat´rios: email"
+        //expect(response.body).toEqual('Mensagem Qualquer') //Não posso passar assim pq vai dar erro
+        expect(response.body).toEqual({ error: 'Os seguintes campos são obrigatórios: email' }); //forma correta
         console.log(response.body);
-    });
-
-    it.only('CT002 - Criação de usuário com dados válidos, deve retornar a resposta', async () => {
-        // Atividade A, serve para o B
-        const response = await request(rota)
-            .post('/users')
-            .send(json_arquivo_cadastro_usuario) // no primeiro momento, não estamos usando uma biblioteca para gerar massa de teste. Por isso, o (json_arquivo_cadastro_usuario) pode exibir erro.
-        expect(response.body).toBeDefined(); // vai retornar o Corpo do conteudo do body e ainda fala que a resposta do body tem um corpo e tem um registro e não está nulla ou vazia.
-        expect(response.body).toHaveProperty('id'); // asserção p/ verificar se na response.body existe a propiedade, ai devo informar a propriedade que eu quero.
-        expect(response.status).toBe(201);
-
-        idUsuario = response.body.id
-        console.log('Usuário cadastrado:', idUsuario);
-
-        /*dicas: 
-         - Após o cadastro "POST", armazene o resultado em uma variável.
-         - Essa variavel já deverá estar definida...
-         - Lembre-se que para você acessar o objeto de um playload você pode usar response.body.objetoDesejado.
-        */
-
-    });
-
-    it.only('CT003 - Deve consultar o usuário cadastrado anteriormente, e logar o registro do usuário cadastrado como retornado', async () => {
-        // Atividade B, depende do A        
-        const response = await request(rota)
-            .get(`/users/${idUsuario}`);
-
-        expect(response.status).toBe(200); //valida o status
-        expect(response.body).toBeDefined(); // vai retornar o Corpo do conteudo do body e ainda fala que a resposta do body tem um corpo e tem um registro e não está nulla ou vazia.
-        expect(response.body).toHaveProperty('id', idUsuario); // asserção p/ verificar se na response.body existe a propiedade, ai devo informar a propriedade que eu quero.     
-        console.log('Usuário retornado: ', response.body);
-    });
-
-    it.only('CT004 - Alterando o registro cadastrado anteriormente. Método PUT', async () => {
-       // Atividade C, depende do A
-       
-       const novoPayload ={
-            nome: "Batatão do Teste",
-            telefone: "(31) 91234-5678",
-            email: "garrafa@teste.com", //nossa chave unica
-            senha: "54321"
-       }
-       
-       const responseUpdate = await request(rota)
-            .put(`/users/${idUsuario}`)
-            .send(novoPayload)
-
-        expect(responseUpdate.status).toBe(201);
-        expect(responseUpdate.body.nome).toBe(novoPayload.nome); //valida se o nome que estou enviando é de fato o que deve ser alterado
-       console.log(responseUpdate.body)
-
-        /*dicas: 
-         - com a variável armazenada, chame o método put, passando payload com a alteração do nome do usuário,
-         - não esqueça de passar todos os campos que sejam obrigatórios
-        */
     })
 
-    it('CT005 - Criação de usuário com dados válidos, deve retornar o "Corpo do Objeto do usuário" criado e um status 201.', async () => {
-        // Atividade 2
-        const response = await request(rota)
+    it('CT002 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.', async () => {
+        const response = await request(rotaUsers)
             .post('/users')
-            .send(json_arquivo_cadastro_usuario) // no primeiro momento, não estamos usando uma biblioteca para gerar massa de teste. Por isso, o (json_arquivo_cadastro_usuario) pode exibir erro.
-        expect(response.body).toBeDefined(); // vai retornar o Corpo do conteudo do body e ainda fala que a resposta do body tem um corpo e tem um registro e não está nulla ou vazia.
+            .send(payloadUsuario);
+
+        //armazenar o retorno do ID, na variável
+        recebeId = response.body.id;
+
+        //validação do status code
         expect(response.status).toBe(201);
-        console.log(response.body);
-    });
 
-    it('CT006 - Deve Cadastrar usuário com Dados Ausentes, e lançar um Erro e retornar um status 422 apresentando uma mensagem descritiva e detalhada do erro', async () => {
-        // Atividade 3
-        const response = await request(rota)
-            .post('/users')
-            .send(json_arquivo_cadastro_usuario_dados_ausentes)
-        expect(response.body).toBeDefined();
-        expect(response.status).toBe(422)
-        console.log(response.body);
-    });
+        //verificar se o id realmente está definido (retornado)
+        expect(recebeId).toBeDefined();
 
-    it('CT007 - Criação de usuário com dados inválidos, deve retornar 422 e a mensagem de erro como resposta.', async () => {
-        const response = await request(rota)
-            .post('/users')
-            .send(json_arquivo_cadastro_usuario)
-        expect(response.body).toBeDefined();
-        expect(response.status).toBe(422);
-        console.log(response.body)
+        console.log('Usuário cadastrado: ', response.body);
     })
 
-    it('CT008 - Cadastro com conteúdo do Json VAZIO, deve retornar status 422 e apresentando uma mensagem descritiva e detalhada com o erro "Os seguintes campos são obrigatórios: nome, telefone, email, senha".', async () => {
-        const response = await request(rota)
-            .post('/users')
-            .send(json_teste_conteudo_vazio)
-        expect(response.status).toBe(422);
-        console.log(response.body);
-    });
+    it('CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.', async () => {
+        //armazenar a variavel
+        // receber a variavel no parametro da url do put
+        // laterar todos os registros do payload
+        //validar status code
+        //validar alteração
+        //logar resposta
+    })
 
+    it('CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204.', async () => {
+        const response = await request(rotaUsers)
+            .delete(`/users/${recebeId}`)
+
+        //valida o statusCode    
+        expect(response.status).toBe(204)
+        console.log('Resposta do delete:', response.body)
+
+        //validar se realmente foi removido o registro
+        const responseGet = await request(rotaUsers)
+            .get(`/users/${recebeId}`)
+
+        expect(responseGet.status).toBe(404); //valida o status
+        //expect(responseGet.status).toBe(500); //valida o status, teve mudança no código e não retorna mais o 500.
+        //expect(responseGet.body).toEqual({ error: 'Erro ao obter dados do ' }); //dando erro pq não retorna status 500.
+        expect(responseGet.body).toEqual({ error: 'Usuário não encontrado' });
+        console.log(responseGet.body);
+    })
+    
 });
 
+
 /*
-    const json_teste_POSTusersComOcampoEmailComoBooleano = {
-        "nome": "Usuario Teste",
-        "telefone": "1234567890",
-        "email": "usuario@example.com",
-        "senha": false
-    }
+it('Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.', async () => {
+    const response = await request(rotaUsers)
+        .post('/users')
+        .send(payloadUsuario);
 
-    const json_teste_POSTusersComoCampoEmailComoArray = {
-        "nome": "Usuario Teste",
-        "telefone": "1234567890",
-        "email": ["usuario@example.com", "usuario@work.com"],
-        "senha": "senha123"
-    }
+    //validação do status code
+    expect(response.status).toBe(201);
 
-    const json_teste_POSTusersComoCampoSenhaComoArray = {
-        "nome": "Usuario Teste",
-        "telefone": "1234567890",
-        "email": ["usuario@example.com", "usuario@work.com"],
-        "senha": "senha123"
-    }
+    //validar dados retornados
+    const {id, nome, telefone, email} = response.body
 
-    const json_teste_POSTusersComOCampoSenhaComoBooleano = {
-        "nome": "Usuario Teste",
-        "telefone": "1234567890",
-        "email": "usuario@example.com",
-        "senha": false
-    }
+    //verifica presença do ID
+    expect(id).toBeDefined();
 
-    it('Consulta todos os usuários...deve retornar status 200.', async () => {
-        const response = await request(rota).get('/users');
-        expect(response.status).toBe(200);
-        //expect(response.status).toBe(201); // vai dar erro
-    });
- 
-    it('Deve cadastrar um novo usuario, e retornar 200.', async () => {
-        // construimos a nossa requisição, passando a rota completa
-        const response = await request(rota)
-            .post('/users')
-            // precisamos construir os dados que serão enviados no body
-            .send(json_arquivo_cadastro_usuario)
-        // teste do retorno de status 200
-        expect(response.status).toBe(201);
-        console.log(response.body);
-    });
-  
-    it('Quando cadastrar um usuario que ja esteja na base, deve retornar 422.', async () => {
-        const response = await request(rota)
-            .post('/users')
-            .send(json_teste_sem_conteudo)
-        expect(response.status).toBe(422);
-        //expect(response.body).toEqual(json_teste_sem_conteudo);
-        console.log(response.body);
-    });
- 
-    it('Quando cadastrar um usuario que ja esteja na base, deve retornar 422.', async () => {
-        const response = await request(rota)
-            .post('/users')
-            .send(json_teste_POSTusersComOcampoSenhaComoBooleano)
-        expect(response.status).toBe(422);
-       // expect(response.body).toEqual(json_teste_POSTusersComOcampoSenhaComoBooleano);
-        console.log(response.body);
-    });
- 
-    it('Quando cadastrar um usuario que ja esteja na base, deve retornar 422.', async () => {
-        const response = await request(rota)
-            .post('/users')
-            .send(json_teste_POSTusersComoCampoEmailComoArray)
-        expect(response.status).toBe(422);
-        //expect(response.body).toEqual(json_teste_POSTusersComoCampoEmailComoArray);
-        console.log(response.body);
-    });
- 
-    it('Quando cadastrar um usuario que ja esteja na base, deve retornar 422.', async () => {
-        const response = await request(rota)
-            .post('/users')
-            .send(json_teste_POSTusersComOCampoSenhaComoBooleano)
-        expect(response.status).toBe(422);
-        //expect(response.body).toEqual(json_teste_POSTusersComOCampoSenhaComoBooleano);
-        console.log(response.body);
-    });
+    //verifica valor enviado x persistido (recebido)
+    expect(nome).toBe(payloadUsuario.nome)
+    expect(telefone).toBe(payloadUsuario.telefone)
+    expect(email).toBe(payloadUsuario.email)
+
+    //verificar que a senha não está presente no retorno
+    expect(response.body.senha).toBeUndefined();
+
+    console.log('Cadastro do usuário randomico: ', response.body);
+
+})
+
 */
+
+
+
+
+
+// Como começar o meu teste, o modelo de escrita sempre é o describe, logo é dessa forma que ele é feito:
+/*
+describe('Descrição da minha suite de teste', () =>{
+    it('Descição do meu Teste. Posso ter um it ou N its na minha suite de testes', async() =>{
+
+    })
+});
+*/
+
+// no Vs code tem extenções para criar os meus describe e its
