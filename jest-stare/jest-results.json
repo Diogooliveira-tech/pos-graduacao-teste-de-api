@@ -1,14 +1,14 @@
 {
   "numFailedTestSuites": 0,
   "numFailedTests": 0,
-  "numPassedTestSuites": 2,
-  "numPassedTests": 8,
+  "numPassedTestSuites": 3,
+  "numPassedTests": 10,
   "numPendingTestSuites": 0,
   "numPendingTests": 0,
   "numRuntimeErrorTestSuites": 0,
   "numTodoTests": 0,
-  "numTotalTestSuites": 2,
-  "numTotalTests": 8,
+  "numTotalTestSuites": 3,
+  "numTotalTests": 10,
   "openHandles": [],
   "snapshot": {
     "added": 0,
@@ -26,7 +26,7 @@
     "unmatched": 0,
     "updated": 0
   },
-  "startTime": 1722376770553,
+  "startTime": 1722387913597,
   "success": false,
   "testResults": [
     {
@@ -37,10 +37,10 @@
       "numTodoTests": 0,
       "openHandles": [],
       "perfStats": {
-        "end": 1722376775611,
-        "runtime": 4525,
-        "slow": false,
-        "start": 1722376771086
+        "end": 1722387922105,
+        "runtime": 7769,
+        "slow": true,
+        "start": 1722387914336
       },
       "skipped": false,
       "snapshot": {
@@ -58,7 +58,7 @@
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 47,
+          "duration": 75,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT001 - Ausencia de campo email, deverá gerar o status code 422 e emitir uma mensagem de erro validando a mesma",
@@ -73,7 +73,7 @@
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 12,
+          "duration": 18,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT002 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.",
@@ -88,7 +88,7 @@
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 15,
+          "duration": 30,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.",
@@ -103,7 +103,7 @@
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 12,
+          "duration": 20,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204.",
@@ -125,10 +125,10 @@
       "numTodoTests": 0,
       "openHandles": [],
       "perfStats": {
-        "end": 1722376775760,
-        "runtime": 4669,
-        "slow": false,
-        "start": 1722376771091
+        "end": 1722387922137,
+        "runtime": 7814,
+        "slow": true,
+        "start": 1722387914323
       },
       "skipped": false,
       "snapshot": {
@@ -146,7 +146,7 @@
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 57,
+          "duration": 77,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT001 - Ausencia de campo email, deverá gerar o status code 422 e emitir uma mensagem de erro validando a mesma",
@@ -161,7 +161,7 @@
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 13,
+          "duration": 25,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT002 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.",
@@ -176,7 +176,7 @@
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 16,
+          "duration": 26,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.",
@@ -191,7 +191,65 @@
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 13,
+          "duration": 25,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Suite de testes crud (post, get, put, delete) CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204.",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "status": "passed",
+          "title": "CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204."
+        }
+      ],
+      "failureMessage": null
+    },
+    {
+      "leaks": false,
+      "numFailingTests": 0,
+      "numPassingTests": 2,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 1722387922162,
+        "runtime": 7862,
+        "slow": true,
+        "start": 1722387914300
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "testFilePath": "C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\teste-integrado-users.test.js",
+      "testResults": [
+        {
+          "ancestorTitles": [
+            "Suite de testes crud (post, get, put, delete)"
+          ],
+          "duration": 44,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Suite de testes crud (post, get, put, delete) CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 9,
+          "retryReasons": [],
+          "status": "passed",
+          "title": "CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados."
+        },
+        {
+          "ancestorTitles": [
+            "Suite de testes crud (post, get, put, delete)"
+          ],
+          "duration": 23,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204.",

@@ -6,19 +6,19 @@ const {
     HEADERS
 } = require('../suporte/configEnv')
 
+let recebeId;
 
 describe('Suite de testes crud (post, get, put, delete)', () => {
 
-    const payloadUsuario = {
-        nome: faker.name.fullName(),
-        telefone: faker.phone.number('+55 (##) ####-####'),
-        email: faker.internet.email(),
-        senha: faker.internet.password()
-    }
+    beforeAll(async () => {
 
-    let recebeId;
+        const payloadUsuario = {
+            nome: faker.person.fullName(),
+            telefone: faker.phone.number('+55 (##) ####-####'),
+            email: faker.internet.email(),
+            senha: faker.internet.password()
+        }
 
-    it('CT002 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.', async () => {
         const response = await request(URLS.ENDPOINT_USERS)
             .post('/users')
             .set(HEADERS.CONTENT_TYPE)
@@ -27,13 +27,15 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
         recebeId = response.body.id;
         expect(response.status).toBe(201);
         expect(recebeId).toBeDefined();
+
         console.log('Usuário cadastrado: ', response.body);
+
     })
 
-    it('CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.', async () => {
+    it('CT001 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.', async () => {
 
         const novoUsuario = {
-            nome: faker.name.fullName(),
+            nome: faker.person.fullName(),
             telefone: faker.phone.number('+55 (##) ####-####'),
             email: faker.internet.email(),
             senha: faker.internet.password()
@@ -60,7 +62,7 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
 
     })
 
-    it('CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204.', async () => {
+    it('CT002 - Deverá remover o registro cadastrado anteriormente. E retornar 204.', async () => {
         const response = await request(URLS.ENDPOINT_USERS)
             .delete(`/users/${recebeId}`)
 
@@ -78,5 +80,3 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
     })
 
 });
-
-//parei 1:42
