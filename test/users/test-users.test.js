@@ -3,7 +3,7 @@ const request = require('supertest'); //fazendo um require do superte
 
 require('dotenv').config(); //importando minha rota
 const { faker } = require('@faker-js/faker'); //importando a biblioteca do faker
-const rotaUsers = process.env.URL_USERS;
+const rotaUsers = process.env.URL_ROTA;
 
 describe('Suite de testes crud (post, get, put, delete)', () => {
 

@@ -1,14 +1,14 @@
 {
-  "numFailedTestSuites": 0,
-  "numFailedTests": 0,
+  "numFailedTestSuites": 2,
+  "numFailedTests": 1,
   "numPassedTestSuites": 3,
-  "numPassedTests": 10,
+  "numPassedTests": 16,
   "numPendingTestSuites": 0,
   "numPendingTests": 0,
-  "numRuntimeErrorTestSuites": 0,
+  "numRuntimeErrorTestSuites": 1,
   "numTodoTests": 0,
-  "numTotalTestSuites": 3,
-  "numTotalTests": 10,
+  "numTotalTestSuites": 5,
+  "numTotalTests": 17,
   "openHandles": [],
   "snapshot": {
     "added": 0,
@@ -26,21 +26,22 @@
     "unmatched": 0,
     "updated": 0
   },
-  "startTime": 1722387913597,
+  "startTime": 1722694498054,
   "success": false,
   "testResults": [
     {
+      "failureMessage": "  \u001b[1m● \u001b[22mTest suite failed to run\n\n    Your test suite must contain at least one test.\n\n      \u001b[2mat onResult (\u001b[22mnode_modules/@jest/core/build/TestScheduler.js\u001b[2m:133:18)\u001b[22m\n      \u001b[2mat \u001b[22mnode_modules/@jest/core/build/TestScheduler.js\u001b[2m:254:19\u001b[22m\n      \u001b[2mat \u001b[22mnode_modules/emittery/index.js\u001b[2m:363:13\u001b[22m\n          at Array.map (<anonymous>)\n      \u001b[2mat Emittery.emit (\u001b[22mnode_modules/emittery/index.js\u001b[2m:361:23)\u001b[22m\n",
       "leaks": false,
       "numFailingTests": 0,
-      "numPassingTests": 4,
+      "numPassingTests": 0,
       "numPendingTests": 0,
       "numTodoTests": 0,
       "openHandles": [],
       "perfStats": {
-        "end": 1722387922105,
-        "runtime": 7769,
-        "slow": true,
-        "start": 1722387914336
+        "end": 0,
+        "runtime": 0,
+        "slow": false,
+        "start": 0
       },
       "skipped": false,
       "snapshot": {
@@ -52,70 +53,149 @@
         "unmatched": 0,
         "updated": 0
       },
-      "testFilePath": "C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\teste-env-separado.test.js",
+      "testExecError": {
+        "message": "Your test suite must contain at least one test.",
+        "stack": "Error: Your test suite must contain at least one test.\n    at onResult (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\@jest\\core\\build\\TestScheduler.js:133:18)\n    at C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\@jest\\core\\build\\TestScheduler.js:254:19\n    at C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\emittery\\index.js:363:13\n    at Array.map (<anonymous>)\n    at Emittery.emit (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\emittery\\index.js:361:23)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)"
+      },
+      "testFilePath": "C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\users\\exemplo-test-users.test.js",
+      "testResults": []
+    },
+    {
+      "leaks": false,
+      "numFailingTests": 1,
+      "numPassingTests": 6,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 1722694505271,
+        "runtime": 6639,
+        "slow": true,
+        "start": 1722694498632
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "testFilePath": "C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\conteudo\\crud-conteudo.test.js",
       "testResults": [
         {
           "ancestorTitles": [
-            "Suite de testes crud (post, get, put, delete)"
+            ""
           ],
-          "duration": 75,
-          "failureDetails": [],
-          "failureMessages": [],
-          "fullName": "Suite de testes crud (post, get, put, delete) CT001 - Ausencia de campo email, deverá gerar o status code 422 e emitir uma mensagem de erro validando a mesma",
+          "duration": 13,
+          "failureDetails": [
+            {}
+          ],
+          "failureMessages": [
+            "Error: Hooks cannot be defined inside tests. Hook of type \"beforeAll\" is nested within \"Teste 01: Cadastrando usuário, e validando dados enviados e satusCode 201\".\n    at eventHandler (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\eventHandler.js:97:11)\n    at dispatchSync (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\state.js:73:5)\n    at _addHook (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\index.js:116:27)\n    at beforeAll (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\index.js:130:3)\n    at Object.beforeAll (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\conteudo\\crud-conteudo.test.js:6:9)\n    at Promise.then.completed (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\utils.js:298:28)\n    at new Promise (<anonymous>)\n    at callAsyncCircusFn (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\utils.js:231:10)\n    at _callCircusTest (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\run.js:316:40)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at _runTest (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\run.js:252:3)\n    at _runTestsForDescribeBlock (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\run.js:126:9)\n    at _runTestsForDescribeBlock (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\run.js:121:9)\n    at run (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\run.js:71:3)\n    at runAndTransformResultsToJestFormat (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapterInit.js:122:21)\n    at jestAdapter (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapter.js:79:19)\n    at runTestInternal (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-runner\\build\\runTest.js:367:16)\n    at runTest (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-runner\\build\\runTest.js:444:34)\n    at Object.worker (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-runner\\build\\testWorker.js:106:12)"
+          ],
+          "fullName": " Teste 01: Cadastrando usuário, e validando dados enviados e satusCode 201",
           "invocations": 1,
           "location": null,
-          "numPassingAsserts": 2,
+          "numPassingAsserts": 0,
           "retryReasons": [],
-          "status": "passed",
-          "title": "CT001 - Ausencia de campo email, deverá gerar o status code 422 e emitir uma mensagem de erro validando a mesma"
+          "status": "failed",
+          "title": "Teste 01: Cadastrando usuário, e validando dados enviados e satusCode 201"
         },
         {
           "ancestorTitles": [
-            "Suite de testes crud (post, get, put, delete)"
+            ""
           ],
-          "duration": 18,
+          "duration": 0,
           "failureDetails": [],
           "failureMessages": [],
-          "fullName": "Suite de testes crud (post, get, put, delete) CT002 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.",
+          "fullName": " Teste 02: Deve consultar o registro cadastrado anteriormente, e validar resultado e statusCode",
           "invocations": 1,
           "location": null,
-          "numPassingAsserts": 2,
+          "numPassingAsserts": 0,
           "retryReasons": [],
           "status": "passed",
-          "title": "CT002 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados."
+          "title": "Teste 02: Deve consultar o registro cadastrado anteriormente, e validar resultado e statusCode"
         },
         {
           "ancestorTitles": [
-            "Suite de testes crud (post, get, put, delete)"
+            ""
           ],
-          "duration": 30,
+          "duration": 0,
           "failureDetails": [],
           "failureMessages": [],
-          "fullName": "Suite de testes crud (post, get, put, delete) CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.",
+          "fullName": " Teste 03: Deve alterar o conteudo cadastrado anteriormente, e validar que os dados realmente foram alterados e validar statusCode",
           "invocations": 1,
           "location": null,
-          "numPassingAsserts": 7,
+          "numPassingAsserts": 0,
           "retryReasons": [],
           "status": "passed",
-          "title": "CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados."
+          "title": "Teste 03: Deve alterar o conteudo cadastrado anteriormente, e validar que os dados realmente foram alterados e validar statusCode"
         },
         {
           "ancestorTitles": [
-            "Suite de testes crud (post, get, put, delete)"
+            ""
           ],
-          "duration": 20,
+          "duration": 1,
           "failureDetails": [],
           "failureMessages": [],
-          "fullName": "Suite de testes crud (post, get, put, delete) CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204.",
+          "fullName": " Teste 04: Deve remover o registro cadastrado, e validar a consulta do resgistro para garantir sua remoção",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 0,
+          "retryReasons": [],
+          "status": "passed",
+          "title": "Teste 04: Deve remover o registro cadastrado, e validar a consulta do resgistro para garantir sua remoção"
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "duration": 53,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": " exemplo da nova rota",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 1,
+          "retryReasons": [],
+          "status": "passed",
+          "title": "exemplo da nova rota"
+        },
+        {
+          "ancestorTitles": [
+            "Suite de testes crud (post, get, put, delete USER)"
+          ],
+          "duration": 26,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Suite de testes crud (post, get, put, delete USER) CT001 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 9,
+          "retryReasons": [],
+          "status": "passed",
+          "title": "CT001 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados."
+        },
+        {
+          "ancestorTitles": [
+            "Suite de testes crud (post, get, put, delete USER)"
+          ],
+          "duration": 22,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Suite de testes crud (post, get, put, delete USER) CT002 - Deverá remover o registro cadastrado anteriormente. E retornar 204.",
           "invocations": 1,
           "location": null,
           "numPassingAsserts": 3,
           "retryReasons": [],
           "status": "passed",
-          "title": "CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204."
+          "title": "CT002 - Deverá remover o registro cadastrado anteriormente. E retornar 204."
         }
       ],
-      "failureMessage": null
+      "failureMessage": "\u001b[1m\u001b[31m  \u001b[1m● \u001b[22m\u001b[1m › Teste 01: Cadastrando usuário, e validando dados enviados e satusCode 201\u001b[39m\u001b[22m\n\n    Hooks cannot be defined inside tests. Hook of type \"beforeAll\" is nested within \"Teste 01: Cadastrando usuário, e validando dados enviados e satusCode 201\".\n\u001b[2m\u001b[22m\n\u001b[2m    \u001b[0m \u001b[90m 4 |\u001b[39m         \u001b[90m//1. Você deverá cadastrar um novo conteúdo e verificar que o conteúdo está devidamente retornando os dados esperados e o statusCode de sucesso esperado.\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 5 |\u001b[39m     \u001b[22m\n\u001b[2m    \u001b[31m\u001b[1m>\u001b[22m\u001b[2m\u001b[39m\u001b[90m 6 |\u001b[39m         beforeAll(\u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[22m\n\u001b[2m     \u001b[90m   |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[2m\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 7 |\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 8 |\u001b[39m             \u001b[36mconst\u001b[39m payloadUsuario \u001b[33m=\u001b[39m {\u001b[22m\n\u001b[2m     \u001b[90m 9 |\u001b[39m                 nome\u001b[33m:\u001b[39m faker\u001b[33m.\u001b[39mperson\u001b[33m.\u001b[39mfullName()\u001b[33m,\u001b[39m\u001b[0m\u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat eventHandler (\u001b[22m\u001b[2mnode_modules/jest-circus/build/eventHandler.js\u001b[2m:97:11)\u001b[22m\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat Object.beforeAll (\u001b[22m\u001b[2m\u001b[0m\u001b[36mtest/conteudo/crud-conteudo.test.js\u001b[39m\u001b[0m\u001b[2m:6:9)\u001b[22m\u001b[2m\u001b[22m\n"
     },
     {
       "leaks": false,
@@ -125,10 +205,10 @@
       "numTodoTests": 0,
       "openHandles": [],
       "perfStats": {
-        "end": 1722387922137,
-        "runtime": 7814,
+        "end": 1722694505314,
+        "runtime": 6649,
         "slow": true,
-        "start": 1722387914323
+        "start": 1722694498665
       },
       "skipped": false,
       "snapshot": {
@@ -140,13 +220,13 @@
         "unmatched": 0,
         "updated": 0
       },
-      "testFilePath": "C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\test-users.test.js",
+      "testFilePath": "C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\users\\teste-env-separado.test.js",
       "testResults": [
         {
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 77,
+          "duration": 68,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT001 - Ausencia de campo email, deverá gerar o status code 422 e emitir uma mensagem de erro validando a mesma",
@@ -161,7 +241,7 @@
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 25,
+          "duration": 26,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT002 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.",
@@ -176,7 +256,7 @@
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 26,
+          "duration": 22,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.",
@@ -191,7 +271,7 @@
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 25,
+          "duration": 17,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204.",
@@ -213,10 +293,10 @@
       "numTodoTests": 0,
       "openHandles": [],
       "perfStats": {
-        "end": 1722387922162,
-        "runtime": 7862,
+        "end": 1722694505276,
+        "runtime": 6610,
         "slow": true,
-        "start": 1722387914300
+        "start": 1722694498666
       },
       "skipped": false,
       "snapshot": {
@@ -228,19 +308,107 @@
         "unmatched": 0,
         "updated": 0
       },
-      "testFilePath": "C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\teste-integrado-users.test.js",
+      "testFilePath": "C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\users\\teste-integrado-users.test.js",
+      "testResults": [
+        {
+          "ancestorTitles": [
+            "Suite de testes crud (post, get, put, delete USER)"
+          ],
+          "duration": 36,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Suite de testes crud (post, get, put, delete USER) CT001 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 9,
+          "retryReasons": [],
+          "status": "passed",
+          "title": "CT001 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados."
+        },
+        {
+          "ancestorTitles": [
+            "Suite de testes crud (post, get, put, delete USER)"
+          ],
+          "duration": 31,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Suite de testes crud (post, get, put, delete USER) CT002 - Deverá remover o registro cadastrado anteriormente. E retornar 204.",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 3,
+          "retryReasons": [],
+          "status": "passed",
+          "title": "CT002 - Deverá remover o registro cadastrado anteriormente. E retornar 204."
+        }
+      ],
+      "failureMessage": null
+    },
+    {
+      "leaks": false,
+      "numFailingTests": 0,
+      "numPassingTests": 4,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 1722694505280,
+        "runtime": 6610,
+        "slow": true,
+        "start": 1722694498670
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "testFilePath": "C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\users\\test-users.test.js",
       "testResults": [
         {
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 44,
+          "duration": 64,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Suite de testes crud (post, get, put, delete) CT001 - Ausencia de campo email, deverá gerar o status code 422 e emitir uma mensagem de erro validando a mesma",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "status": "passed",
+          "title": "CT001 - Ausencia de campo email, deverá gerar o status code 422 e emitir uma mensagem de erro validando a mesma"
+        },
+        {
+          "ancestorTitles": [
+            "Suite de testes crud (post, get, put, delete)"
+          ],
+          "duration": 21,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Suite de testes crud (post, get, put, delete) CT002 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados.",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "status": "passed",
+          "title": "CT002 - Cadastrando um usuário, e consultando o retorno dos campos, se foram enviados."
+        },
+        {
+          "ancestorTitles": [
+            "Suite de testes crud (post, get, put, delete)"
+          ],
+          "duration": 37,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados.",
           "invocations": 1,
           "location": null,
-          "numPassingAsserts": 9,
+          "numPassingAsserts": 7,
           "retryReasons": [],
           "status": "passed",
           "title": "CT003 - Alterando o registro cadastrado anteriormente, e verificando se os dados realmente foram alterados."
@@ -249,7 +417,7 @@
           "ancestorTitles": [
             "Suite de testes crud (post, get, put, delete)"
           ],
-          "duration": 23,
+          "duration": 24,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "Suite de testes crud (post, get, put, delete) CT004 - Deverá remover o registro cadastrado anteriormente. E retornar 204.",

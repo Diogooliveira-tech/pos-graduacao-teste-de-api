@@ -4,11 +4,11 @@ const { faker } = require('@faker-js/faker');
 const {
     URLS,
     HEADERS
-} = require('../suporte/configEnv')
+} = require('../../suporte/configEnv')
 
 let recebeId;
 
-describe('Suite de testes crud (post, get, put, delete)', () => {
+describe('Suite de testes crud (post, get, put, delete USER)', () => {
 
     beforeAll(async () => {
 
@@ -19,7 +19,7 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
             senha: faker.internet.password()
         }
 
-        const response = await request(URLS.ENDPOINT_USERS)
+        const response = await request(URLS.ROTA_ENDPOINT)
             .post('/users')
             .set(HEADERS.CONTENT_TYPE)
             .send(payloadUsuario);
@@ -41,7 +41,7 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
             senha: faker.internet.password()
         }
 
-        const responsePut = await request(URLS.ENDPOINT_USERS)
+        const responsePut = await request(URLS.ROTA_ENDPOINT)
             .put(`/users/${recebeId}`)
             .send(novoUsuario)
 
@@ -51,7 +51,7 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
         console.log('Usuário alterado: ', responsePut.body);
 
 
-        const responseGet = await request(URLS.ENDPOINT_USERS)
+        const responseGet = await request(URLS.ROTA_ENDPOINT)
             .get(`/users/${recebeId}`)
 
         expect(responseGet.status).toBe(200);
@@ -63,14 +63,14 @@ describe('Suite de testes crud (post, get, put, delete)', () => {
     })
 
     it('CT002 - Deverá remover o registro cadastrado anteriormente. E retornar 204.', async () => {
-        const response = await request(URLS.ENDPOINT_USERS)
+        const response = await request(URLS.ROTA_ENDPOINT)
             .delete(`/users/${recebeId}`)
 
         expect(response.status).toBe(204)
         console.log('Resposta do delete:', response.body)
 
 
-        const responseGet = await request(URLS.ENDPOINT_USERS)
+        const responseGet = await request(URLS.ROTA_ENDPOINT)
             .get(`/users/${recebeId}`)
 
         expect(responseGet.status).toBe(404);
