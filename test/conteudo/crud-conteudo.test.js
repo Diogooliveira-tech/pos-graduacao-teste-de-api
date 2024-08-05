@@ -1,3 +1,13 @@
+//minhas implementações
+const request = require('supertest');
+const { faker } = require('@faker-js/faker');
+
+const {
+    URLS,
+    HEADERS
+} = require('../../suporte/configEnv')
+
+
 describe('', () => {
 
     it('Teste 01: Cadastrando usuário, e validando dados enviados e satusCode 201', async() => {
@@ -65,13 +75,12 @@ describe('', () => {
      */  
     })
 
-
-
-})
+});
 
 
 //Exemplo
 
+/*
 const request = require('supertest');
 const { faker } = require('@faker-js/faker');
 
@@ -154,3 +163,4 @@ describe('Suite de testes crud (post, get, put, delete USER)', () => {
     })
 
 });
+*/

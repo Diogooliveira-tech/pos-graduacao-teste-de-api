@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:crud_conteudo": "jest test/conteudo/crud-conteudo.test.js"
   },
   "keywords": [],
   "author": "Diogo Marques de Oliveira",

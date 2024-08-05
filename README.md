@@ -19,3 +19,6 @@ Siga os passos abaixo para configurar o ambiente de desenvolvimento:
 
 4. Inicie o projeto:
    npm start
+
+### Para rodar todos os teste: npm run test
+### Para rodar teste da pasta conteudo: npm run test:crud_conteudo
