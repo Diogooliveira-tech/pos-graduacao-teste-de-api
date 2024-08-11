@@ -40,4 +40,5 @@ BACKEND 2:  D:\Projeto\pos-graduacao-disciplina-teste-de-api\aulas1\crud_cliente
 
 // Relatório de teste de API
 // -> link: https://www.npmjs.com/package/jest-stare
+// -> relatório do jest: http://127.0.0.1:5500/jest-stare/index.html
 // -> comando para instalar na raiz do projeto: npm install jest-stare --save-dev
