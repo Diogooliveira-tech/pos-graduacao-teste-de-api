@@ -1,14 +1,14 @@
 {
-  "numFailedTestSuites": 1,
-  "numFailedTests": 1,
-  "numPassedTestSuites": 0,
-  "numPassedTests": 4,
+  "numFailedTestSuites": 0,
+  "numFailedTests": 0,
+  "numPassedTestSuites": 1,
+  "numPassedTests": 3,
   "numPendingTestSuites": 0,
   "numPendingTests": 0,
   "numRuntimeErrorTestSuites": 0,
   "numTodoTests": 0,
   "numTotalTestSuites": 1,
-  "numTotalTests": 5,
+  "numTotalTests": 3,
   "openHandles": [],
   "snapshot": {
     "added": 0,
@@ -26,21 +26,21 @@
     "unmatched": 0,
     "updated": 0
   },
-  "startTime": 1722854428993,
+  "startTime": 1723354054797,
   "success": false,
   "testResults": [
     {
       "leaks": false,
-      "numFailingTests": 1,
-      "numPassingTests": 4,
+      "numFailingTests": 0,
+      "numPassingTests": 3,
       "numPendingTests": 0,
       "numTodoTests": 0,
       "openHandles": [],
       "perfStats": {
-        "end": 1722854435416,
-        "runtime": 6271,
-        "slow": true,
-        "start": 1722854429145
+        "end": 1723354055418,
+        "runtime": 521,
+        "slow": false,
+        "start": 1723354054897
       },
       "skipped": false,
       "snapshot": {
@@ -52,89 +52,55 @@
         "unmatched": 0,
         "updated": 0
       },
-      "testFilePath": "C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\conteudo\\crud-conteudo.test.js",
+      "testFilePath": "C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\conteudo\\trabalhoDeRecuperacao-e2e.test.js",
       "testResults": [
         {
           "ancestorTitles": [
-            ""
+            "Testes GET, POST rota conteúdos do Trabalho de Recuperação API Rest"
           ],
-          "duration": 1,
-          "failureDetails": [
-            {}
-          ],
-          "failureMessages": [
-            "Error: Hooks cannot be defined inside tests. Hook of type \"beforeAll\" is nested within \"Teste 01: Cadastrando usuário, e validando dados enviados e satusCode 201\".\n    at eventHandler (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\eventHandler.js:97:11)\n    at dispatchSync (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\state.js:73:5)\n    at _addHook (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\index.js:116:27)\n    at beforeAll (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\index.js:130:3)\n    at Object.beforeAll (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\test\\conteudo\\crud-conteudo.test.js:16:9)\n    at Promise.then.completed (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\utils.js:298:28)\n    at new Promise (<anonymous>)\n    at callAsyncCircusFn (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\utils.js:231:10)\n    at _callCircusTest (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\run.js:316:40)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at _runTest (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\run.js:252:3)\n    at _runTestsForDescribeBlock (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\run.js:126:9)\n    at _runTestsForDescribeBlock (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\run.js:121:9)\n    at run (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\run.js:71:3)\n    at runAndTransformResultsToJestFormat (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapterInit.js:122:21)\n    at jestAdapter (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapter.js:79:19)\n    at runTestInternal (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-runner\\build\\runTest.js:367:16)\n    at runTest (C:\\Projects_Sinqia\\Projects_JavaScript\\PGATS\\PGATS-pos-graduacao-disciplina-teste-de-api\\PRIMEIRO-TEST\\pos-graduacao-teste-de-api\\node_modules\\jest-runner\\build\\runTest.js:444:34)"
-          ],
-          "fullName": " Teste 01: Cadastrando usuário, e validando dados enviados e satusCode 201",
+          "duration": 70,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "Testes GET, POST rota conteúdos do Trabalho de Recuperação API Rest CT01 - recuperação - Deve consultar lista de conteudos e verificar se o status da resposta é 200 e que o corpo da resposta é um array",
           "invocations": 1,
           "location": null,
-          "numPassingAsserts": 0,
+          "numPassingAsserts": 3,
           "retryReasons": [],
-          "status": "failed",
-          "title": "Teste 01: Cadastrando usuário, e validando dados enviados e satusCode 201"
+          "status": "passed",
+          "title": "CT01 - recuperação - Deve consultar lista de conteudos e verificar se o status da resposta é 200 e que o corpo da resposta é um array"
         },
         {
           "ancestorTitles": [
-            ""
+            "Testes GET, POST rota conteúdos do Trabalho de Recuperação API Rest"
           ],
-          "duration": 0,
+          "duration": 17,
           "failureDetails": [],
           "failureMessages": [],
-          "fullName": " Teste 02: Deve consultar o registro cadastrado anteriormente, e validar resultado e statusCode",
+          "fullName": "Testes GET, POST rota conteúdos do Trabalho de Recuperação API Rest CT02 - recuperação - Deve Retorna 201 e ID no corpo ao criar conteúdo com sucesso.",
           "invocations": 1,
           "location": null,
-          "numPassingAsserts": 0,
+          "numPassingAsserts": 3,
           "retryReasons": [],
           "status": "passed",
-          "title": "Teste 02: Deve consultar o registro cadastrado anteriormente, e validar resultado e statusCode"
+          "title": "CT02 - recuperação - Deve Retorna 201 e ID no corpo ao criar conteúdo com sucesso."
         },
         {
           "ancestorTitles": [
-            ""
+            "Testes GET, POST rota conteúdos do Trabalho de Recuperação API Rest"
           ],
-          "duration": 0,
+          "duration": 5,
           "failureDetails": [],
           "failureMessages": [],
-          "fullName": " Teste 03: Deve alterar o conteudo cadastrado anteriormente, e validar que os dados realmente foram alterados e validar statusCode",
+          "fullName": "Testes GET, POST rota conteúdos do Trabalho de Recuperação API Rest CT03 - recuperação - Deve retornar status code 422 e mensagem de erro: Os seguintes campos são obrigatórios: titulo",
           "invocations": 1,
           "location": null,
-          "numPassingAsserts": 0,
+          "numPassingAsserts": 3,
           "retryReasons": [],
           "status": "passed",
-          "title": "Teste 03: Deve alterar o conteudo cadastrado anteriormente, e validar que os dados realmente foram alterados e validar statusCode"
-        },
-        {
-          "ancestorTitles": [
-            ""
-          ],
-          "duration": 0,
-          "failureDetails": [],
-          "failureMessages": [],
-          "fullName": " Teste 04: Deve remover o registro cadastrado, e validar a consulta do resgistro para garantir sua remoção",
-          "invocations": 1,
-          "location": null,
-          "numPassingAsserts": 0,
-          "retryReasons": [],
-          "status": "passed",
-          "title": "Teste 04: Deve remover o registro cadastrado, e validar a consulta do resgistro para garantir sua remoção"
-        },
-        {
-          "ancestorTitles": [
-            ""
-          ],
-          "duration": 50,
-          "failureDetails": [],
-          "failureMessages": [],
-          "fullName": " exemplo da nova rota",
-          "invocations": 1,
-          "location": null,
-          "numPassingAsserts": 1,
-          "retryReasons": [],
-          "status": "passed",
-          "title": "exemplo da nova rota"
+          "title": "CT03 - recuperação - Deve retornar status code 422 e mensagem de erro: Os seguintes campos são obrigatórios: titulo"
         }
       ],
-      "failureMessage": "\u001b[1m\u001b[31m  \u001b[1m● \u001b[22m\u001b[1m › Teste 01: Cadastrando usuário, e validando dados enviados e satusCode 201\u001b[39m\u001b[22m\n\n    Hooks cannot be defined inside tests. Hook of type \"beforeAll\" is nested within \"Teste 01: Cadastrando usuário, e validando dados enviados e satusCode 201\".\n\u001b[2m\u001b[22m\n\u001b[2m    \u001b[0m \u001b[90m 14 |\u001b[39m         \u001b[90m//1. Você deverá cadastrar um novo conteúdo e verificar que o conteúdo está devidamente retornando os dados esperados e o statusCode de sucesso esperado.\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 15 |\u001b[39m     \u001b[22m\n\u001b[2m    \u001b[31m\u001b[1m>\u001b[22m\u001b[2m\u001b[39m\u001b[90m 16 |\u001b[39m         beforeAll(\u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[22m\n\u001b[2m     \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[2m\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 17 |\u001b[39m\u001b[22m\n\u001b[2m     \u001b[90m 18 |\u001b[39m             \u001b[36mconst\u001b[39m payloadUsuario \u001b[33m=\u001b[39m {\u001b[22m\n\u001b[2m     \u001b[90m 19 |\u001b[39m                 nome\u001b[33m:\u001b[39m faker\u001b[33m.\u001b[39mperson\u001b[33m.\u001b[39mfullName()\u001b[33m,\u001b[39m\u001b[0m\u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat eventHandler (\u001b[22m\u001b[2mnode_modules/jest-circus/build/eventHandler.js\u001b[2m:97:11)\u001b[22m\u001b[2m\u001b[22m\n\u001b[2m      \u001b[2mat Object.beforeAll (\u001b[22m\u001b[2m\u001b[0m\u001b[36mtest/conteudo/crud-conteudo.test.js\u001b[39m\u001b[0m\u001b[2m:16:9)\u001b[22m\u001b[2m\u001b[22m\n"
+      "failureMessage": null
     }
   ],
   "wasInterrupted": false

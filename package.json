@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test:crud_conteudo": "jest test/conteudo/crud-conteudo.test.js"
+    "test:crud_conteudo": "jest test/conteudo/crud-conteudo.test.js",
+    "test:segundaChamada-e2e": "jest test/conteudo/segundaChamada-e2e.test.js",
+    "test:alternativo": "jest test/conteudo/alternativo.test.js",
+    "test:recuperacao": "jest test/conteudo/trabalhoDeRecuperacao-e2e.test.js"
   },
   "keywords": [],
   "author": "Diogo Marques de Oliveira",
